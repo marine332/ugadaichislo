@@ -6,22 +6,33 @@
     <body>
         <script>
             console.log("Я загадал число от 1 до 10. Попробуй угадать его!");
-            let userNumber = Number(prompt("введите число: ")); 
-            let number = 6;
-            console.log(userNumber);
             
-            if (userNumber > number){
-                console.log("загаданное число меньше");
-                console.log("вы проиграли!")
+            let attempts = 10;
+            let number = 6;
+
+            while ( attempts > 0 ){
+                let userNumber = Number(prompt("введите число: "));
+                console.log(userNumber);
+
+                if (userNumber > number){
+                    console.log("загаданное число меньше");
+                }
+                else if (userNumber === number){
+                    console.log("это успех!");
+                    console.log("вы угадали");
+                    break;
+                }
+                else{
+                    console.log("загаданное число больше");
+                }
+                    // attempts-- это декримент (вычитаем 1 из attempts) 
+                attempts--;
             }
-            else if (userNumber === number){
-                console.log("это успех!")
-                console.log("вы угадали");
+
+            if ( attempts === 0 ){
+                console.log("вы проиграли");
             }
-            else{
-                console.log("загаданное число больше");
-                console.log("вы проиграли!")
-            }
+
         </script>
     </body>
 </html>
